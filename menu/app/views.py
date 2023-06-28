@@ -6,13 +6,12 @@ from .models import Dish
 
 
 def index(request):
-    template = loader.get_template("app/index.html")
-    # name_list = Dish.objects.values_list("dish_desc", flat=True)
     dishes = Dish.objects.all()
     context = {
         "dishes": dishes
     }
-    return render(request, "app/index.html", context)
+    # return render(request, "app/index.html", context)
+    return render(request, "index.html", context)
 
 
 def details(request, dish_id):
