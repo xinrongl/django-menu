@@ -1,5 +1,5 @@
 from django.db import models
-
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class Dish(models.Model):
@@ -7,12 +7,15 @@ class Dish(models.Model):
                                 auto_created=True,
                                 auto_now_add=True)
     dish_id = models.AutoField(verbose_name="Dish ID", primary_key=True)
-    dish_desc = models.CharField(verbose_name="Dish description",
-                                 max_length=1000)
-    dish_image = models.ImageField(verbose_name="Image path", blank=True, upload_to="media")
+    name = models.CharField(verbose_name="Dish name", max_length=1000)
+    desc = models.CharField(verbose_name="Dish description", max_length=1000)
+    image = models.ImageField(verbose_name="Image path",
+                              blank=True,
+                              upload_to="media")
+    tags = TaggableManager()
 
     def __str__(self):
-        return self.dish_desc
+        return self.name
 
 
 class History(models.Model):

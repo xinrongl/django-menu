@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "taggit" # for model fields with tags
 ]
 
 MIDDLEWARE = [
@@ -132,5 +133,5 @@ MEDIA_URL = '/dishimage/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'dishimage')
 
 # STATIC
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
